@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../widget/labour_card.dart';
 
@@ -7,7 +8,7 @@ class Need_order extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
         Labourcard(
           name: 'Labour Name',
@@ -22,7 +23,22 @@ class Need_order extends StatelessWidget {
           widgetintended: SizedBox(
             width: 2,
           ),
-        )
+        ),
+        SizedBox(
+          height: 15,
+        ),
+        Divider(
+          color: Colors.grey,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Text(
+              "Equipments",
+            ),
+          ],
+        ),
       ],
     );
   }

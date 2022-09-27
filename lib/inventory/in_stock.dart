@@ -144,174 +144,188 @@ class _In_stockState extends State<In_stock> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            TextButton(
-              child: Text("Add New Material"),
-              onPressed: () {
-                setState(() {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        scrollable: true,
-                        title: Text('Login'),
-                        content: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Form(
-                            child: Column(
-                              children: <Widget>[
-                                TextFormField(
-                                  controller: _nameController,
-                                  decoration: InputDecoration(
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color: Color(0xff84746A), width: 2.5),
-                                    ),
-                                    labelText: 'Name',
-                                    suffixIcon: IconButton(
-                                        onPressed: () {
-                                          _nameController.clear();
-                                        },
-                                        icon: Icon(Icons.clear)),
-                                    // icon: Icon(Icons.account_box),
-                                  ),
-                                ),
-                                Container(
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(height: 30),
-                                      image != null
-                                          ? Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 20),
-                                              child: Image.file(
-                                                File(image!.path),
-                                                fit: BoxFit.cover,
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                height: 200,
-                                              ),
-                                            )
-                                          : Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 5),
-                                              child: Container(
-                                                height: 200,
-                                                width: 400,
-                                                decoration: BoxDecoration(
-                                                    color: Colors.grey.shade300,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            30)),
-                                              ),
-                                            ),
-                                      SizedBox(height: 20),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 21),
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                              fixedSize: Size(
-                                                  MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                      0.4,
-                                                  60),
-                                              primary: Color(0xffFFDEA9)),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  side: BorderSide(width: 1),
+                ),
+                child: Text(
+                  "Add New Material",
+                  style: TextStyle(color: Color(0xff52443B)),
+                ),
+                onPressed: () {
+                  setState(() {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          scrollable: true,
+                          title: Text('Login'),
+                          content: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Form(
+                              child: Column(
+                                children: <Widget>[
+                                  TextFormField(
+                                    controller: _nameController,
+                                    decoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xff84746A),
+                                            width: 2.5),
+                                      ),
+                                      labelText: 'Name',
+                                      suffixIcon: IconButton(
                                           onPressed: () {
-                                            setState(() {
-                                              myAlert();
-                                            });
+                                            _nameController.clear();
                                           },
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.min,
-                                            children: [
-                                              Text(
-                                                'Upload Aadhar',
-                                                style: TextStyle(
+                                          icon: Icon(Icons.clear)),
+                                      // icon: Icon(Icons.account_box),
+                                    ),
+                                  ),
+                                  Container(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(height: 30),
+                                        image != null
+                                            ? Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 20),
+                                                child: Image.file(
+                                                  File(image!.path),
+                                                  fit: BoxFit.cover,
+                                                  width: MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                                  height: 200,
+                                                ),
+                                              )
+                                            : Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 5),
+                                                child: Container(
+                                                  height: 200,
+                                                  width: 400,
+                                                  decoration: BoxDecoration(
+                                                      color:
+                                                          Colors.grey.shade300,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30)),
+                                                ),
+                                              ),
+                                        SizedBox(height: 20),
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(left: 21),
+                                          child: ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                fixedSize: Size(
+                                                    MediaQuery.of(context)
+                                                            .size
+                                                            .width *
+                                                        0.4,
+                                                    60),
+                                                primary: Color(0xffFFDEA9)),
+                                            onPressed: () {
+                                              setState(() {
+                                                myAlert();
+                                              });
+                                            },
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Text(
+                                                  'Upload Aadhar',
+                                                  style: TextStyle(
+                                                    color: Color.fromRGBO(
+                                                        147, 75, 0, 5),
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 18,
+                                                  ),
+                                                ), // <-- Text
+                                                SizedBox(
+                                                  width: 5,
+                                                ),
+                                                Icon(
+                                                  // <-- Icon
+                                                  Icons.file_upload_outlined,
                                                   color: Color.fromRGBO(
                                                       147, 75, 0, 5),
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 18,
+                                                  size: 24.0,
                                                 ),
-                                              ), // <-- Text
-                                              SizedBox(
-                                                width: 5,
-                                              ),
-                                              Icon(
-                                                // <-- Icon
-                                                Icons.file_upload_outlined,
-                                                color: Color.fromRGBO(
-                                                    147, 75, 0, 5),
-                                                size: 24.0,
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ),
+                                      ],
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  TextFormField(
+                                    controller: _materialController,
+                                    decoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xff84746A),
+                                            width: 2.5),
                                       ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(height: 20),
-                                TextFormField(
-                                  controller: _materialController,
-                                  decoration: InputDecoration(
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color: Color(0xff84746A), width: 2.5),
+                                      labelText: 'Material',
+                                      suffixIcon: IconButton(
+                                          onPressed: () {
+                                            _materialController.clear();
+                                          },
+                                          icon: Icon(Icons.clear)),
+                                      // icon: Icon(Icons.account_box),
                                     ),
-                                    labelText: 'Material',
-                                    suffixIcon: IconButton(
-                                        onPressed: () {
-                                          _materialController.clear();
-                                        },
-                                        icon: Icon(Icons.clear)),
-                                    // icon: Icon(Icons.account_box),
                                   ),
-                                ),
-                                SizedBox(height: 20),
-                                TextFormField(
-                                  controller: _quantityController,
-                                  decoration: InputDecoration(
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                          color: Color(0xff84746A), width: 2.5),
+                                  SizedBox(height: 20),
+                                  TextFormField(
+                                    controller: _quantityController,
+                                    decoration: InputDecoration(
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Color(0xff84746A),
+                                            width: 2.5),
+                                      ),
+                                      labelText: 'Quantity',
+                                      suffixIcon: IconButton(
+                                          onPressed: () {
+                                            _quantityController.clear();
+                                          },
+                                          icon: Icon(Icons.clear)),
+                                      // icon: Icon(Icons.account_box),
                                     ),
-                                    labelText: 'Quantity',
-                                    suffixIcon: IconButton(
-                                        onPressed: () {
-                                          _quantityController.clear();
-                                        },
-                                        icon: Icon(Icons.clear)),
-                                    // icon: Icon(Icons.account_box),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        actions: [
-                          TextButton(
-                              child: Text("Submit"),
-                              onPressed: () {
-                                // your code
-                              })
-                        ],
-                      );
-                    },
-                  );
-                });
-              },
+                          actions: [
+                            TextButton(
+                                child: Text("Submit"),
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                  // your code
+                                })
+                          ],
+                        );
+                      },
+                    );
+                  });
+                },
+              ),
             ),
           ],
         ),
         Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(8),
+              padding: EdgeInsets.all(20),
               child: DropdownSearch<String>.multiSelection(
                 dropdownDecoratorProps: DropDownDecoratorProps(
                   dropdownSearchDecoration: InputDecoration(
@@ -358,179 +372,192 @@ class _In_stockState extends State<In_stock> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                TextButton(
-                  child: Text("Add New Tool"),
-                  onPressed: () {
-                    setState(() {
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            scrollable: true,
-                            title: Text('Add New Tool'),
-                            content: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Form(
-                                child: Column(
-                                  children: <Widget>[
-                                    TextFormField(
-                                      controller: _nametoolController,
-                                      decoration: InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xff84746A),
-                                              width: 2.5),
-                                        ),
-                                        labelText: 'Name',
-                                        suffixIcon: IconButton(
-                                            onPressed: () {
-                                              _nametoolController.clear();
-                                            },
-                                            icon: Icon(Icons.clear)),
-                                        // icon: Icon(Icons.account_box),
-                                      ),
-                                    ),
-                                    Container(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(height: 30),
-                                          image1 != null
-                                              ? Padding(
-                                                  padding: const EdgeInsets
-                                                          .symmetric(
-                                                      horizontal: 20),
-                                                  child: Image.file(
-                                                    File(image1!.path),
-                                                    fit: BoxFit.cover,
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .width,
-                                                    height: 200,
-                                                  ),
-                                                )
-                                              : Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 5),
-                                                  child: Container(
-                                                    height: 200,
-                                                    width: 400,
-                                                    decoration: BoxDecoration(
-                                                        color: Colors
-                                                            .grey.shade300,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(30)),
-                                                  ),
-                                                ),
-                                          SizedBox(height: 20),
-                                          Padding(
-                                            padding:
-                                                const EdgeInsets.only(left: 21),
-                                            child: ElevatedButton(
-                                              style: ElevatedButton.styleFrom(
-                                                  fixedSize: Size(
-                                                      MediaQuery.of(context)
-                                                              .size
-                                                              .width *
-                                                          0.4,
-                                                      60),
-                                                  primary: Color(0xffFFDEA9)),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      side: BorderSide(width: 1),
+                    ),
+                    child: Text(
+                      "Add New Tool",
+                      style: TextStyle(color: Color(0xff52443B)),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              scrollable: true,
+                              title: Text('Add New Tool'),
+                              content: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Form(
+                                  child: Column(
+                                    children: <Widget>[
+                                      TextFormField(
+                                        controller: _nametoolController,
+                                        decoration: InputDecoration(
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Color(0xff84746A),
+                                                width: 2.5),
+                                          ),
+                                          labelText: 'Name',
+                                          suffixIcon: IconButton(
                                               onPressed: () {
-                                                setState(() {
-                                                  myAlert1();
-                                                });
+                                                _nametoolController.clear();
                                               },
-                                              child: Row(
-                                                mainAxisSize: MainAxisSize.min,
-                                                children: [
-                                                  Text(
-                                                    'Upload Aadhar',
-                                                    style: TextStyle(
+                                              icon: Icon(Icons.clear)),
+                                          // icon: Icon(Icons.account_box),
+                                        ),
+                                      ),
+                                      Container(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            SizedBox(height: 30),
+                                            image1 != null
+                                                ? Padding(
+                                                    padding: const EdgeInsets
+                                                            .symmetric(
+                                                        horizontal: 20),
+                                                    child: Image.file(
+                                                      File(image1!.path),
+                                                      fit: BoxFit.cover,
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                              .size
+                                                              .width,
+                                                      height: 200,
+                                                    ),
+                                                  )
+                                                : Padding(
+                                                    padding:
+                                                        const EdgeInsets.only(
+                                                            left: 5),
+                                                    child: Container(
+                                                      height: 200,
+                                                      width: 400,
+                                                      decoration: BoxDecoration(
+                                                          color: Colors
+                                                              .grey.shade300,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      30)),
+                                                    ),
+                                                  ),
+                                            SizedBox(height: 20),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 21),
+                                              child: ElevatedButton(
+                                                style: ElevatedButton.styleFrom(
+                                                    fixedSize: Size(
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width *
+                                                            0.4,
+                                                        60),
+                                                    primary: Color(0xffFFDEA9)),
+                                                onPressed: () {
+                                                  setState(() {
+                                                    myAlert1();
+                                                  });
+                                                },
+                                                child: Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.min,
+                                                  children: [
+                                                    Text(
+                                                      'Upload Aadhar',
+                                                      style: TextStyle(
+                                                        color: Color.fromRGBO(
+                                                            147, 75, 0, 5),
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        fontSize: 18,
+                                                      ),
+                                                    ), // <-- Text
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Icon(
+                                                      // <-- Icon
+                                                      Icons
+                                                          .file_upload_outlined,
                                                       color: Color.fromRGBO(
                                                           147, 75, 0, 5),
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      fontSize: 18,
+                                                      size: 24.0,
                                                     ),
-                                                  ), // <-- Text
-                                                  SizedBox(
-                                                    width: 5,
-                                                  ),
-                                                  Icon(
-                                                    // <-- Icon
-                                                    Icons.file_upload_outlined,
-                                                    color: Color.fromRGBO(
-                                                        147, 75, 0, 5),
-                                                    size: 24.0,
-                                                  ),
-                                                ],
+                                                  ],
+                                                ),
                                               ),
                                             ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(height: 20),
+                                      TextFormField(
+                                        controller: _materialtoolController,
+                                        decoration: InputDecoration(
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Color(0xff84746A),
+                                                width: 2.5),
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    SizedBox(height: 20),
-                                    TextFormField(
-                                      controller: _materialtoolController,
-                                      decoration: InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xff84746A),
-                                              width: 2.5),
+                                          labelText: 'Material',
+                                          suffixIcon: IconButton(
+                                              onPressed: () {
+                                                _materialtoolController.clear();
+                                              },
+                                              icon: Icon(Icons.clear)),
+                                          // icon: Icon(Icons.account_box),
                                         ),
-                                        labelText: 'Material',
-                                        suffixIcon: IconButton(
-                                            onPressed: () {
-                                              _materialtoolController.clear();
-                                            },
-                                            icon: Icon(Icons.clear)),
-                                        // icon: Icon(Icons.account_box),
                                       ),
-                                    ),
-                                    SizedBox(height: 20),
-                                    TextFormField(
-                                      controller: _quantitytoolController,
-                                      decoration: InputDecoration(
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                              color: Color(0xff84746A),
-                                              width: 2.5),
+                                      SizedBox(height: 20),
+                                      TextFormField(
+                                        controller: _quantitytoolController,
+                                        decoration: InputDecoration(
+                                          enabledBorder: OutlineInputBorder(
+                                            borderSide: BorderSide(
+                                                color: Color(0xff84746A),
+                                                width: 2.5),
+                                          ),
+                                          labelText: 'Quantity',
+                                          suffixIcon: IconButton(
+                                              onPressed: () {
+                                                _quantitytoolController.clear();
+                                              },
+                                              icon: Icon(Icons.clear)),
+                                          // icon: Icon(Icons.account_box),
                                         ),
-                                        labelText: 'Quantity',
-                                        suffixIcon: IconButton(
-                                            onPressed: () {
-                                              _quantitytoolController.clear();
-                                            },
-                                            icon: Icon(Icons.clear)),
-                                        // icon: Icon(Icons.account_box),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            actions: [
-                              TextButton(
-                                  child: Text("Submit"),
-                                  onPressed: () {
-                                    // your code
-                                  })
-                            ],
-                          );
-                        },
-                      );
-                    });
-                  },
+                              actions: [
+                                TextButton(
+                                    child: Text("Submit"),
+                                    onPressed: () {
+                                      Navigator.pop(context);
+                                      // your code
+                                    })
+                              ],
+                            );
+                          },
+                        );
+                      });
+                    },
+                  ),
                 ),
               ],
             ),
             Padding(
-              padding: EdgeInsets.all(8),
+              padding: EdgeInsets.all(20),
               child: DropdownSearch<String>.multiSelection(
                 dropdownDecoratorProps: DropDownDecoratorProps(
                   dropdownSearchDecoration: InputDecoration(
@@ -558,11 +585,12 @@ class _In_stockState extends State<In_stock> {
               ),
             ),
             Labourcard(
-                name: 'Tool Name',
-                description: 'Material Description',
-                widgetintended: SizedBox(
+              name: 'Tool Name',
+              description: 'Material Description',
+              widgetintended: SizedBox(
                 width: 2,
-              ),),
+              ),
+            ),
           ],
         ),
       ],

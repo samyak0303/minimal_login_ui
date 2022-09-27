@@ -15,58 +15,166 @@ class _Order_HistoryState extends State<Order_History> {
         title: Text("Order History"),
         centerTitle: true,
       ),
-      body: Column(children: [
-        Container(
-          margin: EdgeInsets.only(top: 15),
-          child: Divider(color: Colors.black),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              "Order ID",
-              style: TextStyle(fontSize: 15, color: Colors.grey),
+      body: Column(
+        children: [
+          Column(children: [
+            Container(
+              margin: EdgeInsets.only(top: 20),
+              child: Divider(color: Colors.grey),
             ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text(
-              "Site Name",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Order ID",
+                  style: TextStyle(fontSize: 15, color: Colors.grey),
+                ),
+              ],
             ),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              "Amount",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  "Site Name",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
-          ],
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              "Delivery Status/Delivery Date",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Amount",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
-          ],
-        ),
-        Labourcard(
-          name: 'Material Name',
-          description: 'Jobsheet Title',
-          widgetintended: SizedBox(
-            width: 2,
-          ),
-        ),
-      ]),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Delivery Status/Delivery Date",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            Labourcard(
+              name: 'Material Name',
+              description: 'Jobsheet Title',
+              widgetintended: SizedBox(
+                width: 2,
+              ),
+            ),
+          ]),
+          Column(children: [
+            Container(
+              margin: EdgeInsets.only(top: 25),
+              child: Divider(color: Colors.grey),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Order ID",
+                  style: TextStyle(fontSize: 15, color: Colors.grey),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  "Site Name",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Amount",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Delivery Status/Delivery Date",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            Labourcard(
+              name: 'Material Name',
+              description: 'Jobsheet Title',
+              widgetintended: SizedBox(
+                width: 2,
+              ),
+            ),
+          ]),
+          Column(children: [
+            Container(
+              margin: EdgeInsets.only(top: 25),
+              child: Divider(color: Colors.grey),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Order ID",
+                  style: TextStyle(fontSize: 15, color: Colors.grey),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  "Site Name",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Amount",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  "Delivery Status/Delivery Date",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            Labourcard(
+              name: 'Material Name',
+              description: 'Jobsheet Title',
+              widgetintended: SizedBox(
+                width: 2,
+              ),
+            ),
+          ]),
+        ],
+      ),
     );
   }
 
